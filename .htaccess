@@ -1,0 +1,33 @@
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+Rewriterule ^(.*)$ index.php?url=$1
+
+# Bloqueia a listagem de diretórios.
+Options All -Indexes
+
+# Mensagem de erro personalizada.
+ErrorDocument 403 "Desculpe! acesso nao permitido!"
+
+# Redireciona para o HTTPS independente do domínio
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Adiciona www. no prefixo do domínio
+#RewriteCond %{HTTP_HOST} !^www\. [NC]
+#RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]s
+
+SetEnv HOST "Host"
+SetEnv USER "User"
+SetEnv PASS "Pass"
+SetEnv DBSA "Database"
+SetEnv BASE "https://enzovilasboas.com.br/steam"
+SetEnv BASESIS "https://enzovilasboas.com.br/steam"
+SetEnv MAILUSER ""
+SetEnv MAILPASS ""
+SetEnv MAILPORT 465
+SetEnv MAILHOST ""
+SetEnv TITULO "Tree Map Steam"
+SetEnv DESCRICAO "Grafico com os jogos mais jogados da steam nesse momento"
+SetEnv LOG true
+SetEnv VERSION 5
