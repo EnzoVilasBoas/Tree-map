@@ -9,6 +9,7 @@
             $retorno      = file_get_contents($url);
             $jogos = json_decode($retorno, true);
             $topJogos = array_slice($jogos['response']['ranks'], 0, 10);
+            //$topJogos = array_slice($jogos['response']['ranks'], 0, 3);
             return $topJogos;
         }
 
