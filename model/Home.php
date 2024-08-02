@@ -47,4 +47,14 @@
             $porcentagem = ($jogadores / $online) * 100;
             return $porcentagem;
         }
+
+        /**
+         * Função responsavel pela coloração linear
+         * @param int $porc
+         * @return string
+         */
+        public function cor($porc) {
+            $g = intval(255 * $porc / 100);
+            return "rgb(0, $g, 0)";
+        }
     }

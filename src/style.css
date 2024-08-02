@@ -7,6 +7,7 @@ body, html {
     width: 100%;
     height: 100%;
     display: flex;
+    background-color: gray;
 }
 .treemap-container {
     display: grid;
@@ -19,7 +20,7 @@ body, html {
     align-items: center;
     text-align: center;
     border: 1px solid white;
-    background-color: lightblue;
     box-sizing: border-box;
     flex-direction: column;
+    color: white;
 }

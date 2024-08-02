@@ -25,9 +25,9 @@ $hm = new Home;
                 $info = $hm->jogo($j['appid']);
                 $porc = number_format($hm->porcentagem($j['peak_in_game']));
                 echo '
-                <div class="box" style="grid-column: span '.$porc.'; grid-row: span '.$porc.';"">
+                <div class="box" style="grid-column: span '.$porc.'; grid-row: span '.$porc.';background-color: '.$hm->cor($porc).';"">
                     <span><b>'.$info->{$j['appid']}->data->name.'</b></span>
-                    <span>Jogadores online : <b>'.$j['peak_in_game'].'</b></span>
+                    <span>Jogadores online : <b>'.number_format($j['peak_in_game'],0,'.','.').'</b></span>
                     <span>Porcenteagem : <b>'.$porc.'%</b></span>
                 </div>';
             }
